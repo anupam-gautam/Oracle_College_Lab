@@ -1,4 +1,4 @@
-drop table DEmployee
+//CREATE TWO TABLE AND IMPLEMENT union, interesection, difference union all on them
 
 create table MEmployee (
 eid number primary key, 
