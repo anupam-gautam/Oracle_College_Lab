@@ -1,0 +1,21 @@
+
+/  
+create view higer_salaried_employee
+AS
+select * from Demployee  where salary>60000
+union
+select * from Memployee where salary >60000;
+/
+select * from higer_salaried_employee;
+/
+create materialized view log on Demployee;
+create materialized view log on Memployee;
+/
+create materialized view Emp_with_high_sal 
+refresh fast start with sysdate next sysdate+1/1440
+as
+select * from Demployee  where salary>60000;
+
+insert into Demployee values (103,'Rita',80000,'F');
+/
+select * from emp_with_high_sal;
