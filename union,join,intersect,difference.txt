@@ -1,0 +1,50 @@
+drop table DEmployee
+
+create table MEmployee (
+eid number primary key, 
+ename varchar2(20), 
+salary number,
+sex varchar2(10)
+);
+
+
+CREATE TABLE DEmployee (
+eid int primary key, 
+ename varchar2(20),
+salary number,
+sex varchar2(10)
+);
+
+
+SELECT * FROM MEmployee;
+SELECT * FROM DEmployee;
+
+INSERT INTO MEmployee VALUES(6, 'Gyaneshwor',88888, 'M');
+INSERT INTO DEmployee VALUES(2, 'Sita', 101010, 'F');
+INSERT INTO DEmployee VALUES(3, 'Addison',434010, 'M');
+INSERT INTO DEmployee VALUES(4, 'Gita', 231010, 'F');
+INSERT INTO DEmployee VALUES(5, 'Mingma',234343, 'M');
+
+SELECT * FROM MEmployee UNION SELECT * FROM DEmployee ;
+//ORDER BY Ename DESC
+
+SELECT ename FROM MEmployee UNION SELECT ename from DEmployee;
+
+SELECT ename FROM MEmployee UNION ALL SELECT ename from DEmployee;
+
+SELECT * FROM MEmployee INTERSECT SELECT * from DEmployee;
+
+SELECT * FROM MEmployee MINUS SELECT * from DEmployee;
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
