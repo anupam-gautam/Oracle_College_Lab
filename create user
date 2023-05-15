@@ -1,0 +1,5 @@
+show user;
+/
+create user C##kamal identified by oracle123;
+grant create table to C##kamal;
+grant dba to C##kamal;
