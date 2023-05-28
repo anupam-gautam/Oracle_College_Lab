@@ -1,0 +1,11 @@
+create or replace trigger salaryCheck
+before insert or update on employee
+for each row
+declare managerSalary number;
+begin
+select salary into managerSalary from employee
+where eid=:NEW.mid;
+if :NEW.salary > managerSalary then
+raise_application_error(-20001,'Manager salary iis hreater than other employee');
+end if;
+end;
