@@ -2,8 +2,11 @@ select * from employee;
 /
 create or replace procedure update_emp_salary(e in number, en in varchar2) is
 begin
-update employee set salary = salary-1000 where eid = e;
+select salary into sal from employee where eid = e;
+if sal<=30000 then
+update employee set salary = salary+1000 where eid = e;
 update employee set ename = en;
+end if;
 end;
 
 /
