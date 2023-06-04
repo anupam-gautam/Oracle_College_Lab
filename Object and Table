@@ -1,0 +1,23 @@
+create type Employee_Type as Object (
+    eid number,
+    ename varchar2(20),
+    age number,
+    address varchar2(20),
+    salary number
+);
+/
+
+INSERT INTO Employee_Type VALUES(45,'fdg',3,'fdgd',34223);
+/
+
+
+create table EmpTable (
+id raw(16) primary key,
+employee Employee_Type
+);
+
+/
+
+/
+
+select * from EmpTable;
