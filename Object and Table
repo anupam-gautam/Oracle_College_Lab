@@ -7,7 +7,6 @@ create type Employee_Type as Object (
 );
 /
 
-INSERT INTO Employee_Type VALUES(45,'fdg',3,'fdgd',34223);
 /
 
 
@@ -18,6 +17,18 @@ employee Employee_Type
 
 /
 
+insert into EmpTable values(SYS_GUID(),Employee_Type(101,'Kamal',3,'fdgd',34223));
+
+
+insert into EmpTable values(SYS_GUID(),Employee_Type(101,'Kamal',3,'fdgd',34223));
+
+insert into EmpTable values(SYS_GUID(),Employee_Type(101,'Kamal',3,'fdgd',34223));
+
+insert into EmpTable values(SYS_GUID(),Employee_Type(101,'Kamal',3,'fdgd',34223));
+
+insert into EmpTable values(SYS_GUID(),Employee_Type(101,'Kamal',3,'fdgd',34223));
+
+insert into EmpTable values(SYS_GUID(),Employee_Type(101,'Kamal',3,'fdgd',34223));
 /
 
 select * from EmpTable;
