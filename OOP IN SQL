@@ -1,0 +1,40 @@
+create type Personat as object (
+    pname varchar2(20),
+    address varchar2(20),
+    age number,
+    sex varchar2(20)
+) not final;
+
+/
+
+create type employeeonat under personat (
+    eid number,
+    salary number 
+) not final;
+
+/
+
+create type manageriot under employeeonat (
+    no_of_exp_years number,
+    qualification varchar2(20)
+)
+
+/
+
+create table companyTableonat (
+    mid raw(16) primary key,
+    m manageriot
+)
+/
+
+SELECT * FROM companyTableonat;
+/
+
+insert into companyTableonat values(SYS_GUID(), manageriot('Kamal','Tokha',23,'M',32,35000,5,'Bachelors') );
+
+insert into companyTableonat values(SYS_GUID(), manageriot('Kamal','Tokha',23,'M',32,35000,5,'Bachelors') );
+
+/
+SELECT * FROM companyTableonat;
+
+
